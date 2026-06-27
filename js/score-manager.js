@@ -5,11 +5,11 @@ const ScoreManager = {
     try {
       const d = sessionStorage.getItem(this._key);
       return d ? JSON.parse(d) : { scores: {}, gamesPlayed: 0, lastGame: null, totalScore: 0 };
-    } catch { return { scores: {}, gamesPlayed: 0, lastGame: null, totalScore: 0 }; }
+    } catch (e) { return { scores: {}, gamesPlayed: 0, lastGame: null, totalScore: 0 }; }
   },
 
   _save(data) {
-    try { sessionStorage.setItem(this._key, JSON.stringify(data)); } catch {}
+    try { sessionStorage.setItem(this._key, JSON.stringify(data)); } catch (e) {}
   },
 
   saveScore(gameId, score) {

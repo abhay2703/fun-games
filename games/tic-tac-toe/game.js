@@ -22,7 +22,7 @@
     try {
       const d = sessionStorage.getItem("ttt-record");
       return d ? JSON.parse(d) : { w: 0, l: 0, d: 0 };
-    } catch { return { w: 0, l: 0, d: 0 }; }
+    } catch (e) { return { w: 0, l: 0, d: 0 }; }
   }
 
   function saveRecord(rec) {
