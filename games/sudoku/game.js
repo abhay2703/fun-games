@@ -7,7 +7,7 @@
     .sdk-wrapper{text-align:center;user-select:none}
     .sdk-status{font-size:1rem;font-weight:600;margin-bottom:12px;min-height:28px;color:var(--text)}
     .sdk-board{display:inline-grid;grid-template-columns:repeat(9,1fr);gap:0;border:2px solid #333;border-radius:4px;overflow:hidden}
-    .sdk-cell{width:42px;height:42px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:1.2rem;font-weight:600;cursor:pointer;background:var(--bg-card);transition:background .1s;color:var(--text)}
+    .sdk-cell{width:38px;height:38px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:1.2rem;font-weight:600;cursor:pointer;background:var(--bg-card);transition:background .1s;color:var(--text)}
     .sdk-cell:nth-child(3n){border-right:2px solid #555}
     .sdk-cell:nth-child(n+19):nth-child(-n+27),.sdk-cell:nth-child(n+46):nth-child(-n+54){border-bottom:2px solid #555}
     .sdk-cell.given{font-weight:800;color:var(--text);background:#f0f1f7}

@@ -14,7 +14,7 @@
     .g2048-wrapper{text-align:center;user-select:none}
     .g2048-status{font-size:1.1rem;font-weight:600;margin-bottom:12px;min-height:28px;color:var(--text)}
     .g2048-board{display:inline-grid;grid-template-columns:repeat(4,1fr);gap:8px;background:#bbada0;padding:8px;border-radius:8px}
-    .g2048-tile{width:80px;height:80px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1.6rem;transition:all .1s}
+    .g2048-tile{width:72px;height:72px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1.6rem;transition:all .1s}
     @media(max-width:480px){.g2048-tile{width:64px;height:64px;font-size:1.2rem}.g2048-board{gap:6px;padding:6px}}
   `;
   document.head.appendChild(style);

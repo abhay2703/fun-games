@@ -37,7 +37,7 @@
 
   function render() {
     root.innerHTML = `<div class="paint-wrapper">
-      <canvas class="paint-canvas" id="paintCanvas" width="600" height="400"></canvas>
+      <canvas class="paint-canvas" id="paintCanvas" width="560" height="360"></canvas>
       <div class="paint-tools">
         <div class="color-palette">
           ${COLORS.map(c => `<div class="color-swatch${color === c ? " active" : ""}" style="background:${c};${c==="#FFFFFF"?"box-shadow:inset 0 0 0 1px #ccc;":""}" data-color="${c}"></div>`).join("")}

@@ -1,7 +1,7 @@
 (function () {
   const root = document.getElementById("gameRoot");
-  const SIZE = 15;
-  const CELL = 28;
+  const SIZE = 11;
+  const CELL = 22;
   let maze, playerPos, endPos, steps, won;
 
   const style = document.createElement("style");

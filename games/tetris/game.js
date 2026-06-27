@@ -1,6 +1,6 @@
 (function () {
   const root = document.getElementById("gameRoot");
-  const COLS = 10, ROWS = 20, CELL = 28;
+  const COLS = 10, ROWS = 20, CELL = 24;
   const PIECES = [
     { shape: [[1,1,1,1]], color: "#06B6D4" },
     { shape: [[1,1],[1,1]], color: "#F59E0B" },

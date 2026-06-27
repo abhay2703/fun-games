@@ -1,6 +1,6 @@
 (function () {
   const root = document.getElementById("gameRoot");
-  const CELL = 24;
+  const CELL = 20;
   const MAP = [
     "1111111111111111111",
     "1........1........1",

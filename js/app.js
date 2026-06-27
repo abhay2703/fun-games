@@ -138,9 +138,7 @@ function initFilters() {
 }
 
 function initHomepage() {
-  renderGamesGrid(getFeaturedGames(), "featuredGames");
-  renderGamesGrid(getPopularGames(), "popularGames");
-  renderGamesGrid(GAMES.slice().reverse().slice(0, 4), "recentGames");
+  renderGamesGrid(GAMES, "allGamesHome");
 
   const catGrid = document.getElementById("categoriesGrid");
   if (catGrid) {

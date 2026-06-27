@@ -7,7 +7,7 @@
     .sp-wrapper{text-align:center;user-select:none}
     .sp-status{font-size:1.1rem;font-weight:600;margin-bottom:12px;min-height:28px;color:var(--text)}
     .sp-grid{display:inline-grid;grid-template-columns:repeat(4,1fr);gap:4px;background:var(--border);padding:6px;border-radius:10px}
-    .sp-tile{width:76px;height:76px;border-radius:8px;font-size:1.5rem;font-weight:800;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .15s;background:var(--primary);color:#fff}
+    .sp-tile{width:68px;height:68px;border-radius:8px;font-size:1.5rem;font-weight:800;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .15s;background:var(--primary);color:#fff}
     .sp-tile:hover{transform:scale(1.03)}
     .sp-tile.empty{background:transparent;cursor:default;pointer-events:none}
     .sp-tile.correct{background:var(--success);color:#fff}

@@ -7,7 +7,7 @@
     .ttt-wrapper{text-align:center;user-select:none}
     .ttt-status{font-size:1.2rem;font-weight:700;margin-bottom:16px;min-height:36px;color:var(--text)}
     .ttt-board{display:inline-grid;grid-template-columns:repeat(3,1fr);gap:6px;background:var(--border);padding:6px;border-radius:12px}
-    .ttt-cell{width:90px;height:90px;background:var(--bg-card);border:none;border-radius:8px;font-size:2.4rem;font-weight:800;cursor:pointer;transition:all .15s;display:flex;align-items:center;justify-content:center;color:var(--text)}
+    .ttt-cell{width:80px;height:80px;background:var(--bg-card);border:none;border-radius:8px;font-size:2.4rem;font-weight:800;cursor:pointer;transition:all .15s;display:flex;align-items:center;justify-content:center;color:var(--text)}
     .ttt-cell:hover:not(.taken){background:var(--primary-light)}
     .ttt-cell.taken{cursor:default}
     .ttt-cell.x{color:var(--primary)}

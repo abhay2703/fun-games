@@ -13,7 +13,7 @@
     .fm-wrapper{text-align:center;user-select:none}
     .fm-status{font-size:1.1rem;font-weight:600;margin-bottom:20px;min-height:28px;color:var(--text)}
     .fm-board{display:inline-grid;grid-template-columns:1fr 1fr;gap:8px;border-radius:50%;padding:16px}
-    .fm-pad{width:120px;height:120px;border-radius:16px;border:none;cursor:pointer;transition:all .15s;opacity:.7}
+    .fm-pad{width:100px;height:100px;border-radius:16px;border:none;cursor:pointer;transition:all .15s;opacity:.7}
     .fm-pad:hover{opacity:.85}
     .fm-pad.active,.fm-pad.lit{opacity:1;transform:scale(1.05)}
     .fm-pad.disabled{cursor:default;pointer-events:none;opacity:.5}

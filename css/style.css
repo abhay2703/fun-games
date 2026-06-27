@@ -137,7 +137,8 @@ input,select{font-family:var(--font);font-size:inherit}
 .toolbar-btn{padding:8px 14px;border-radius:var(--radius-sm);font-weight:600;font-size:.82rem;background:var(--bg);border:1px solid var(--border);color:var(--text-secondary);transition:all var(--transition);display:flex;align-items:center;gap:4px}
 .toolbar-btn:hover{border-color:var(--primary);color:var(--primary)}
 .toolbar-btn.active{background:var(--primary);color:#fff;border-color:var(--primary)}
-.game-area{min-height:400px;display:flex;align-items:center;justify-content:center;padding:24px;position:relative}
+.game-area{min-height:300px;max-height:70vh;display:flex;align-items:center;justify-content:center;padding:20px;position:relative;overflow:auto}
+.game-area canvas{max-width:100%;max-height:60vh;height:auto}
 .game-canvas-wrapper{display:flex;align-items:center;justify-content:center;width:100%}
 
 /* Game Info Section */
