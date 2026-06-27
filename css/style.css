@@ -128,7 +128,9 @@ input,select{font-family:var(--font);font-size:inherit}
 .back-btn{display:flex;align-items:center;gap:6px;padding:8px 16px;border-radius:var(--radius-sm);font-weight:600;font-size:.9rem;background:var(--bg-card);border:1px solid var(--border);color:var(--text-secondary);transition:all var(--transition)}
 .back-btn:hover{border-color:var(--primary);color:var(--primary)}
 .game-page-title{font-size:1.6rem;font-weight:800}
-.game-container{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;margin-bottom:24px}
+.game-page-layout{display:grid;grid-template-columns:260px 1fr;gap:20px;align-items:start}
+.game-sidebar .info-card{position:sticky;top:84px}
+.game-container{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden}
 .game-toolbar{display:flex;align-items:center;justify-content:space-between;padding:12px 20px;border-bottom:1px solid var(--border);background:var(--bg-game);flex-wrap:wrap;gap:8px}
 .game-toolbar .game-controls{display:flex;gap:8px}
 .game-toolbar .game-score{display:flex;gap:16px;font-size:.9rem}
@@ -213,6 +215,8 @@ input,select{font-family:var(--font);font-size:inherit}
   .filter-bar{flex-direction:column;align-items:stretch}
   .continue-banner{flex-direction:column;text-align:center}
   .section-title{font-size:1.2rem}
+  .game-page-layout{grid-template-columns:1fr}
+  .game-sidebar .info-card{position:static}
   .game-toolbar{flex-direction:column;align-items:stretch}
   .game-toolbar .game-score{justify-content:center}
   .game-toolbar .game-controls{justify-content:center}

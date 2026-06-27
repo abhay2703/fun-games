@@ -15,30 +15,38 @@
     <nav class="header-nav"><a href="../../index.html">Home</a><a href="../../games.html">All Games</a></nav>
     <button class="mobile-menu-btn" aria-label="Menu">☰</button>
   </div></header>
+
   <main class="main">
-    <div class="game-page-header"><a href="../../games.html" class="back-btn">← Back</a><h1 class="game-page-title">💡 Flash Memory</h1></div>
-    <div class="game-container">
-      <div class="game-toolbar">
-        <div class="game-controls">
-          <button class="toolbar-btn" onclick="restartGame()">🔄 Restart</button>
-          <button class="toolbar-btn" onclick="toggleFullscreen()">⛶ Fullscreen</button>
-        </div>
-        <div class="game-score">
-          <span>Level: <strong id="scoreDisplay">0</strong></span>
-          <span>Best: <strong id="bestDisplay">0</strong></span>
+    <div class="game-page-header">
+      <a href="../../games.html" class="back-btn">← Back</a>
+      <h1 class="game-page-title">💡 Flash Memory</h1>
+    </div>
+    <div class="game-page-layout">
+      <div class="game-sidebar">
+        <div class="info-card">
+          <h3>📖 How to Play</h3>
+          <p>Watch the sequence, then repeat it back.</p>
+          <ul><li>Watch the colored buttons flash</li><li>Click them in the same order</li><li>Each round adds one more step</li><li>One mistake ends the game</li><li>How far can you go?</li></ul>
         </div>
       </div>
-      <div class="game-area"><div id="gameRoot"></div></div>
+      <div class="game-container">
+        <div class="game-toolbar">
+          <div class="game-controls">
+            <button class="toolbar-btn" onclick="restartGame()">🔄 Restart</button>
+            <button class="toolbar-btn" onclick="toggleFullscreen()">⛶ Fullscreen</button>
+          </div>
+          <div class="game-score">
+            <span>Level: <strong id="scoreDisplay">0</strong></span>
+            <span>Best: <strong id="bestDisplay">0</strong></span>
+          </div>
+        </div>
+        <div class="game-area"><div id="gameRoot"></div></div>
+      </div>
     </div>
-    <div class="game-info">
-      <div class="info-card"><h3>📖 How to Play</h3><p>Watch the colored buttons flash in sequence, then repeat the pattern by clicking them in the same order.</p><ul><li>Watch the flashing sequence carefully</li><li>Click the buttons in the same order</li><li>Each round adds one more step</li><li>One mistake ends the game</li></ul></div>
-      <div class="info-card"><h3>🎯 Skills & Benefits</h3><p>Flash Memory trains working memory, attention span, and sequential recall — inspired by Simon Says.</p><ul><li><strong>Memory:</strong> Remember longer sequences</li><li><strong>Focus:</strong> Pay attention to the pattern</li><li><strong>Sequential Recall:</strong> Repeat exact order</li></ul><p style="margin-top:8px"><strong>Recommended for:</strong> Ages 5+</p></div>
-    </div>
-    <section class="related-section"><h3>🎮 Related Games</h3><div class="games-grid" id="relatedGames"></div></section>
   </main>
+
   <footer class="site-footer"><div class="footer-inner"><p>© 2026 FunGames</p><div class="footer-links"><a href="../../index.html">Home</a><a href="../../games.html">All Games</a></div></div></footer>
   <script src="../../js/games-registry.js"></script><script src="../../js/score-manager.js"></script><script src="../../js/daily-challenge.js"></script><script src="../../js/app.js"></script>
   <script src="game.js"></script>
-  <script>renderGamesGrid(GAMES.filter(g=>g.id!=="flash-memory"&&g.skills.includes("memory")).slice(0,4),"relatedGames","../../");</script>
 </body>
 </html>

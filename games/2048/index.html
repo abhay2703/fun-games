@@ -15,35 +15,38 @@
     <nav class="header-nav"><a href="../../index.html">Home</a><a href="../../games.html">All Games</a></nav>
     <button class="mobile-menu-btn" aria-label="Menu">☰</button>
   </div></header>
+
   <main class="main">
-    <div class="game-page-header"><a href="../../games.html" class="back-btn">← Back</a><h1 class="game-page-title">🔢 2048</h1></div>
-    <div class="game-container">
-      <div class="game-toolbar">
-        <div class="game-controls">
-          <button class="toolbar-btn" onclick="restartGame()">🔄 New Game</button>
-          <button class="toolbar-btn" onclick="toggleFullscreen()">⛶ Fullscreen</button>
-        </div>
-        <div class="game-score">
-          <span>Score: <strong id="scoreDisplay">0</strong></span>
-          <span>Best: <strong id="bestDisplay">0</strong></span>
+    <div class="game-page-header">
+      <a href="../../games.html" class="back-btn">← Back</a>
+      <h1 class="game-page-title">🔢 2048</h1>
+    </div>
+    <div class="game-page-layout">
+      <div class="game-sidebar">
+        <div class="info-card">
+          <h3>📖 How to Play</h3>
+          <p>Slide tiles to combine matching numbers and reach 2048!</p>
+          <ul><li>Arrow keys or swipe to slide</li><li>Same numbers merge on collision</li><li>A new tile appears after each move</li><li>Game ends when no moves remain</li><li>Tip: keep highest tile in a corner</li></ul>
         </div>
       </div>
-      <div class="game-area"><div id="gameRoot"></div></div>
+      <div class="game-container">
+        <div class="game-toolbar">
+          <div class="game-controls">
+            <button class="toolbar-btn" onclick="restartGame()">🔄 New Game</button>
+            <button class="toolbar-btn" onclick="toggleFullscreen()">⛶ Fullscreen</button>
+          </div>
+          <div class="game-score">
+            <span>Score: <strong id="scoreDisplay">0</strong></span>
+            <span>Best: <strong id="bestDisplay">0</strong></span>
+          </div>
+        </div>
+        <div class="game-area"><div id="gameRoot"></div></div>
+      </div>
     </div>
-    <div class="game-info">
-      <div class="info-card"><h3>📖 How to Play</h3><p>Use arrow keys or swipe to slide all tiles. When two tiles with the same number collide, they merge into one. Reach 2048 to win!</p><ul><li>Arrow keys or swipe to slide</li><li>Same numbers merge when they collide</li><li>A new tile appears after each move</li><li>Game ends when no moves remain</li></ul></div>
-      <div class="info-card"><h3>🎯 Skills & Benefits</h3><p>2048 enhances mathematical thinking, strategic planning, and spatial reasoning.</p><ul><li><strong>Strategy:</strong> Plan several moves ahead</li><li><strong>Math:</strong> Work with powers of 2</li><li><strong>Spatial:</strong> Manage grid positioning</li></ul><p style="margin-top:8px"><strong>Recommended for:</strong> Ages 8+</p></div>
-    </div>
-    <div class="faq-section"><h3>❓ FAQ</h3>
-      <div class="faq-item"><div class="faq-q">What happens after I reach 2048?</div><div class="faq-a">You can keep playing to achieve higher tiles and scores!</div></div>
-      <div class="faq-item"><div class="faq-q">Is there a strategy?</div><div class="faq-a">Keep your highest tile in a corner and build a chain of decreasing values.</div></div>
-      <div class="faq-item"><div class="faq-q">Can I undo a move?</div><div class="faq-a">No undo is available — think carefully before each move!</div></div>
-    </div>
-    <section class="related-section"><h3>🎮 Related Games</h3><div class="games-grid" id="relatedGames"></div></section>
   </main>
+
   <footer class="site-footer"><div class="footer-inner"><p>© 2026 FunGames</p><div class="footer-links"><a href="../../index.html">Home</a><a href="../../games.html">All Games</a></div></div></footer>
   <script src="../../js/games-registry.js"></script><script src="../../js/score-manager.js"></script><script src="../../js/daily-challenge.js"></script><script src="../../js/app.js"></script>
   <script src="game.js"></script>
-  <script>renderGamesGrid(GAMES.filter(g=>g.id!=="2048"&&g.skills.some(s=>["strategy","math"].includes(s))).slice(0,4),"relatedGames","../../");</script>
 </body>
 </html>

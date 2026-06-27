@@ -15,36 +15,39 @@
     <nav class="header-nav"><a href="../../index.html">Home</a><a href="../../games.html">All Games</a></nav>
     <button class="mobile-menu-btn" aria-label="Menu">☰</button>
   </div></header>
+
   <main class="main">
-    <div class="game-page-header"><a href="../../games.html" class="back-btn">← Back</a><h1 class="game-page-title">🃏 Memory Match</h1></div>
-    <div class="game-container">
-      <div class="game-toolbar">
-        <div class="game-controls">
-          <button class="toolbar-btn" onclick="restartGame()">🔄 Restart</button>
-          <button class="toolbar-btn" onclick="toggleFullscreen()">⛶ Fullscreen</button>
-        </div>
-        <div class="game-score">
-          <span>Moves: <strong id="scoreDisplay">0</strong></span>
-          <span>Best: <strong id="bestDisplay">0</strong></span>
-          <span>Pairs: <strong id="pairsDisplay">0/8</strong></span>
+    <div class="game-page-header">
+      <a href="../../games.html" class="back-btn">← Back</a>
+      <h1 class="game-page-title">🃏 Memory Match</h1>
+    </div>
+    <div class="game-page-layout">
+      <div class="game-sidebar">
+        <div class="info-card">
+          <h3>📖 How to Play</h3>
+          <p>Flip cards to find matching pairs. Remember what you've seen!</p>
+          <ul><li>Click to flip a card</li><li>Find all matching pairs</li><li>Fewer moves = better score</li><li>Match all 8 pairs to win</li></ul>
         </div>
       </div>
-      <div class="game-area"><div id="gameRoot"></div></div>
+      <div class="game-container">
+        <div class="game-toolbar">
+          <div class="game-controls">
+            <button class="toolbar-btn" onclick="restartGame()">🔄 Restart</button>
+            <button class="toolbar-btn" onclick="toggleFullscreen()">⛶ Fullscreen</button>
+          </div>
+          <div class="game-score">
+            <span>Moves: <strong id="scoreDisplay">0</strong></span>
+            <span>Best: <strong id="bestDisplay">0</strong></span>
+            <span>Pairs: <strong id="pairsDisplay">0/8</strong></span>
+          </div>
+        </div>
+        <div class="game-area"><div id="gameRoot"></div></div>
+      </div>
     </div>
-    <div class="game-info">
-      <div class="info-card"><h3>📖 How to Play</h3><p>Click on cards to flip them over. Find all matching pairs with the fewest moves. Remember what you've seen!</p><ul><li>Click to flip a card</li><li>Find matching pairs</li><li>Fewer moves = better score</li><li>Match all 8 pairs to win</li></ul></div>
-      <div class="info-card"><h3>🎯 Skills & Benefits</h3><p>Memory Match strengthens short-term memory, concentration, and visual recognition.</p><ul><li><strong>Memory:</strong> Remember card positions</li><li><strong>Focus:</strong> Concentrate on the board</li><li><strong>Pattern Recognition:</strong> Track revealed cards</li></ul><p style="margin-top:8px"><strong>Recommended for:</strong> All ages (4+)</p></div>
-    </div>
-    <div class="faq-section"><h3>❓ FAQ</h3>
-      <div class="faq-item"><div class="faq-q">How many pairs are there?</div><div class="faq-a">The standard game has 8 pairs (16 cards). Try to match them all!</div></div>
-      <div class="faq-item"><div class="faq-q">Is there a time limit?</div><div class="faq-a">No time limit — focus on minimizing the number of moves.</div></div>
-      <div class="faq-item"><div class="faq-q">Does the game track my best score?</div><div class="faq-a">Yes, your best (lowest) number of moves is tracked during the current session.</div></div>
-    </div>
-    <section class="related-section"><h3>🎮 Related Games</h3><div class="games-grid" id="relatedGames"></div></section>
   </main>
+
   <footer class="site-footer"><div class="footer-inner"><p>© 2026 FunGames</p><div class="footer-links"><a href="../../index.html">Home</a><a href="../../games.html">All Games</a></div></div></footer>
   <script src="../../js/games-registry.js"></script><script src="../../js/score-manager.js"></script><script src="../../js/daily-challenge.js"></script><script src="../../js/app.js"></script>
   <script src="game.js"></script>
-  <script>renderGamesGrid(GAMES.filter(g=>g.id!=="memory-match"&&g.skills.includes("memory")).slice(0,4),"relatedGames","../../");</script>
 </body>
 </html>

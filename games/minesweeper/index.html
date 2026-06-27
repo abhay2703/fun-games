@@ -15,36 +15,39 @@
     <nav class="header-nav"><a href="../../index.html">Home</a><a href="../../games.html">All Games</a></nav>
     <button class="mobile-menu-btn" aria-label="Menu">☰</button>
   </div></header>
+
   <main class="main">
-    <div class="game-page-header"><a href="../../games.html" class="back-btn">← Back</a><h1 class="game-page-title">💣 Minesweeper</h1></div>
-    <div class="game-container">
-      <div class="game-toolbar">
-        <div class="game-controls">
-          <button class="toolbar-btn" onclick="restartGame()">🔄 New Game</button>
-          <button class="toolbar-btn" id="flagToggle" onclick="toggleFlagMode()">🚩 Flag Mode</button>
-          <button class="toolbar-btn" onclick="toggleFullscreen()">⛶ Fullscreen</button>
-        </div>
-        <div class="game-score">
-          <span>Mines: <strong id="minesDisplay">10</strong></span>
-          <span>Time: <strong id="timeDisplay">0</strong>s</span>
+    <div class="game-page-header">
+      <a href="../../games.html" class="back-btn">← Back</a>
+      <h1 class="game-page-title">💣 Minesweeper</h1>
+    </div>
+    <div class="game-page-layout">
+      <div class="game-sidebar">
+        <div class="info-card">
+          <h3>📖 How to Play</h3>
+          <p>Reveal cells to find all safe squares. Numbers show adjacent mine count.</p>
+          <ul><li>Click to reveal a cell</li><li>Numbers = adjacent mine count</li><li>Right-click to flag suspected mines</li><li>Or use Flag Mode button</li><li>First click is always safe</li><li>Reveal all safe cells to win</li></ul>
         </div>
       </div>
-      <div class="game-area"><div id="gameRoot"></div></div>
+      <div class="game-container">
+        <div class="game-toolbar">
+          <div class="game-controls">
+            <button class="toolbar-btn" onclick="restartGame()">🔄 New Game</button>
+            <button class="toolbar-btn" id="flagToggle" onclick="toggleFlagMode()">🚩 Flag Mode</button>
+            <button class="toolbar-btn" onclick="toggleFullscreen()">⛶ Fullscreen</button>
+          </div>
+          <div class="game-score">
+            <span>Mines: <strong id="minesDisplay">10</strong></span>
+            <span>Time: <strong id="timeDisplay">0</strong>s</span>
+          </div>
+        </div>
+        <div class="game-area"><div id="gameRoot"></div></div>
+      </div>
     </div>
-    <div class="game-info">
-      <div class="info-card"><h3>📖 How to Play</h3><p>Left-click to reveal a cell. Numbers show how many adjacent cells contain mines. Right-click or use Flag Mode to mark suspected mines.</p><ul><li>Click to reveal cells</li><li>Numbers = adjacent mine count</li><li>Right-click or Flag Mode to flag mines</li><li>Reveal all safe cells to win</li></ul></div>
-      <div class="info-card"><h3>🎯 Skills & Benefits</h3><p>Minesweeper develops logical deduction, probability assessment, and systematic problem-solving.</p><ul><li><strong>Logic:</strong> Deduce mine locations</li><li><strong>Strategy:</strong> Choose safe cells systematically</li><li><strong>Pattern Recognition:</strong> Read number patterns</li></ul><p style="margin-top:8px"><strong>Recommended for:</strong> Ages 8+</p></div>
-    </div>
-    <div class="faq-section"><h3>❓ FAQ</h3>
-      <div class="faq-item"><div class="faq-q">How many mines are there?</div><div class="faq-a">The beginner board has 10 mines on a 9×9 grid.</div></div>
-      <div class="faq-item"><div class="faq-q">What does the number mean?</div><div class="faq-a">Each number tells you how many of the 8 surrounding cells contain mines.</div></div>
-      <div class="faq-item"><div class="faq-q">Can the first click be a mine?</div><div class="faq-a">No! The first click is always safe.</div></div>
-    </div>
-    <section class="related-section"><h3>🎮 Related Games</h3><div class="games-grid" id="relatedGames"></div></section>
   </main>
+
   <footer class="site-footer"><div class="footer-inner"><p>© 2026 FunGames</p><div class="footer-links"><a href="../../index.html">Home</a><a href="../../games.html">All Games</a></div></div></footer>
   <script src="../../js/games-registry.js"></script><script src="../../js/score-manager.js"></script><script src="../../js/daily-challenge.js"></script><script src="../../js/app.js"></script>
   <script src="game.js"></script>
-  <script>renderGamesGrid(GAMES.filter(g=>g.id!=="minesweeper"&&g.skills.includes("logic")).slice(0,4),"relatedGames","../../");</script>
 </body>
 </html>

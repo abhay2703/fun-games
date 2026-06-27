@@ -15,36 +15,39 @@
     <nav class="header-nav"><a href="../../index.html">Home</a><a href="../../games.html">All Games</a></nav>
     <button class="mobile-menu-btn" aria-label="Menu">☰</button>
   </div></header>
+
   <main class="main">
-    <div class="game-page-header"><a href="../../games.html" class="back-btn">← Back</a><h1 class="game-page-title">🔷 Sudoku</h1></div>
-    <div class="game-container">
-      <div class="game-toolbar">
-        <div class="game-controls">
-          <button class="toolbar-btn" onclick="restartGame()">🔄 New Puzzle</button>
-          <button class="toolbar-btn" onclick="getHint()">💡 Hint</button>
-          <button class="toolbar-btn" onclick="toggleFullscreen()">⛶ Fullscreen</button>
-        </div>
-        <div class="game-score">
-          <span>Errors: <strong id="scoreDisplay">0</strong></span>
-          <span>Time: <strong id="timeDisplay">0:00</strong></span>
+    <div class="game-page-header">
+      <a href="../../games.html" class="back-btn">← Back</a>
+      <h1 class="game-page-title">🔷 Sudoku</h1>
+    </div>
+    <div class="game-page-layout">
+      <div class="game-sidebar">
+        <div class="info-card">
+          <h3>📖 How to Play</h3>
+          <p>Fill the grid so each row, column, and 3×3 box contains digits 1-9.</p>
+          <ul><li>Click a cell to select it</li><li>Type 1-9 or use the number pad</li><li>Delete/Backspace to clear</li><li>Arrow keys to navigate</li><li>Pre-filled numbers are fixed</li><li>Use Hint for help</li></ul>
         </div>
       </div>
-      <div class="game-area"><div id="gameRoot"></div></div>
+      <div class="game-container">
+        <div class="game-toolbar">
+          <div class="game-controls">
+            <button class="toolbar-btn" onclick="restartGame()">🔄 New Puzzle</button>
+            <button class="toolbar-btn" onclick="getHint()">💡 Hint</button>
+            <button class="toolbar-btn" onclick="toggleFullscreen()">⛶ Fullscreen</button>
+          </div>
+          <div class="game-score">
+            <span>Errors: <strong id="scoreDisplay">0</strong></span>
+            <span>Time: <strong id="timeDisplay">0:00</strong></span>
+          </div>
+        </div>
+        <div class="game-area"><div id="gameRoot"></div></div>
+      </div>
     </div>
-    <div class="game-info">
-      <div class="info-card"><h3>📖 How to Play</h3><p>Click a cell and enter a number 1-9. Each number must appear exactly once in each row, column, and 3×3 box.</p><ul><li>Click a cell to select it</li><li>Type 1-9 or use the number pad</li><li>Press Delete/Backspace to clear</li><li>Pre-filled numbers cannot be changed</li></ul></div>
-      <div class="info-card"><h3>🎯 Skills & Benefits</h3><p>Sudoku strengthens logical reasoning, pattern recognition, and concentration.</p><ul><li><strong>Logic:</strong> Eliminate possibilities systematically</li><li><strong>Focus:</strong> Maintain concentration on constraints</li><li><strong>Patience:</strong> Work through complex deductions</li></ul><p style="margin-top:8px"><strong>Recommended for:</strong> Ages 10+</p></div>
-    </div>
-    <div class="faq-section"><h3>❓ FAQ</h3>
-      <div class="faq-item"><div class="faq-q">Is there always one solution?</div><div class="faq-a">Yes, every puzzle generated has exactly one valid solution.</div></div>
-      <div class="faq-item"><div class="faq-q">Can I get a hint?</div><div class="faq-a">Use the Hint button to reveal one correct cell.</div></div>
-      <div class="faq-item"><div class="faq-q">How is difficulty determined?</div><div class="faq-a">Harder puzzles have fewer starting numbers and require more advanced solving techniques.</div></div>
-    </div>
-    <section class="related-section"><h3>🎮 Related Games</h3><div class="games-grid" id="relatedGames"></div></section>
   </main>
+
   <footer class="site-footer"><div class="footer-inner"><p>© 2026 FunGames</p><div class="footer-links"><a href="../../index.html">Home</a><a href="../../games.html">All Games</a></div></div></footer>
   <script src="../../js/games-registry.js"></script><script src="../../js/score-manager.js"></script><script src="../../js/daily-challenge.js"></script><script src="../../js/app.js"></script>
   <script src="game.js"></script>
-  <script>renderGamesGrid(GAMES.filter(g=>g.id!=="sudoku"&&g.skills.some(s=>["logic","math"].includes(s))).slice(0,4),"relatedGames","../../");</script>
 </body>
 </html>
