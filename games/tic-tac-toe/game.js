@@ -1,6 +1,6 @@
 (function () {
   const root = document.getElementById("gameRoot");
-  let board, currentPlayer, gameOver, wins;
+  let board, currentPlayer, gameOver;
 
   const style = document.createElement("style");
   style.textContent = `
@@ -18,14 +18,29 @@
   `;
   document.head.appendChild(style);
 
+  function getRecord() {
+    try {
+      const d = sessionStorage.getItem("ttt-record");
+      return d ? JSON.parse(d) : { w: 0, l: 0, d: 0 };
+    } catch { return { w: 0, l: 0, d: 0 }; }
+  }
+
+  function saveRecord(rec) {
+    sessionStorage.setItem("ttt-record", JSON.stringify(rec));
+  }
+
+  function updateDisplay() {
+    const rec = getRecord();
+    document.getElementById("winsDisplay").textContent = rec.w;
+    document.getElementById("lossDisplay").textContent = rec.l;
+    document.getElementById("drawDisplay").textContent = rec.d;
+  }
+
   function init() {
     board = Array(9).fill("");
     currentPlayer = "X";
     gameOver = false;
-    wins = parseInt(sessionStorage.getItem("ttt-wins") || "0");
-    document.getElementById("winsDisplay").textContent = wins;
-    const s = ScoreManager.getScore("tic-tac-toe");
-    document.getElementById("bestDisplay").textContent = s.best;
+    updateDisplay();
     render();
   }
 
@@ -84,23 +99,19 @@
     const oWin = getWinLine("O");
     const draw = !board.includes("");
 
-    if (xWin) { endGame("You win! 🎉", xWin, 10); return true; }
-    if (oWin) { endGame("Computer wins!", oWin, 0); return true; }
-    if (draw) { endGame("It's a draw!", [], 3); return true; }
+    if (xWin) { endGame("You win! 🎉", xWin, "w"); return true; }
+    if (oWin) { endGame("Computer wins!", oWin, "l"); return true; }
+    if (draw) { endGame("It's a draw!", [], "d"); return true; }
     render();
     return false;
   }
 
-  function endGame(msg, winCells, score) {
+  function endGame(msg, winCells, result) {
     gameOver = true;
-    if (score === 10) {
-      wins++;
-      sessionStorage.setItem("ttt-wins", wins);
-      document.getElementById("winsDisplay").textContent = wins;
-    }
-    const s = ScoreManager.saveScore("tic-tac-toe", score);
-    document.getElementById("scoreDisplay").textContent = score;
-    document.getElementById("bestDisplay").textContent = s.best;
+    const rec = getRecord();
+    rec[result]++;
+    saveRecord(rec);
+    updateDisplay();
     render();
     document.getElementById("tttStatus").textContent = msg;
     if (winCells.length) {
