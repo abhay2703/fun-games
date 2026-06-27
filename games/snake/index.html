@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Snake Game — Free Online Classic Arcade | FunGames</title>
+  <meta name="description" content="Play the classic Snake game free online. Guide the snake, eat food, grow longer. No download needed. Improves reflexes and focus.">
+  <link rel="canonical" href="https://abhay2703.github.io/fun-games/games/snake/">
+  <link rel="stylesheet" href="../../css/style.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoGame","name":"Snake","description":"Classic arcade snake game","genre":"Arcade","playMode":"SinglePlayer","applicationCategory":"Game"}</script>
+</head>
+<body>
+  <header class="site-header"><div class="header-inner">
+    <a href="../../index.html" class="logo"><span class="logo-icon">🎮</span> Fun<span>Games</span></a>
+    <div class="header-search"><span class="search-icon">🔍</span><input type="search" id="searchInput" placeholder="Search games..." autocomplete="off" aria-label="Search games"><div id="searchDropdown" class="search-results-dropdown"></div></div>
+    <nav class="header-nav"><a href="../../index.html">Home</a><a href="../../games.html">All Games</a></nav>
+    <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+  </div></header>
+  <main class="main">
+    <div class="game-page-header">
+      <a href="../../games.html" class="back-btn">← Back</a>
+      <h1 class="game-page-title">🐍 Snake</h1>
+    </div>
+    <div class="game-container">
+      <div class="game-toolbar">
+        <div class="game-controls">
+          <button class="toolbar-btn" onclick="restartGame()">🔄 Restart</button>
+          <button class="toolbar-btn" onclick="togglePause()">⏸ Pause</button>
+          <button class="toolbar-btn" onclick="toggleFullscreen()">⛶ Fullscreen</button>
+        </div>
+        <div class="game-score">
+          <span>Score: <strong id="scoreDisplay">0</strong></span>
+          <span>Best: <strong id="bestDisplay">0</strong></span>
+        </div>
+      </div>
+      <div class="game-area"><div id="gameRoot"></div></div>
+    </div>
+    <div class="game-info">
+      <div class="info-card"><h3>📖 How to Play</h3><p>Use arrow keys or swipe to change direction. Eat the red food to grow and earn points. Don't hit the walls or yourself!</p><ul><li>Arrow keys or WASD to move</li><li>Swipe on mobile</li><li>Snake speeds up as you score more</li></ul></div>
+      <div class="info-card"><h3>🎯 Skills & Benefits</h3><p>Snake improves reaction time, spatial awareness, and hand-eye coordination.</p><ul><li><strong>Reflex:</strong> Quick direction changes</li><li><strong>Focus:</strong> Track growing snake body</li><li><strong>Planning:</strong> Avoid trapping yourself</li></ul><p style="margin-top:8px"><strong>Recommended for:</strong> All ages (6+)</p></div>
+    </div>
+    <div class="faq-section"><h3>❓ FAQ</h3>
+      <div class="faq-item"><div class="faq-q">How do I control the snake on mobile?</div><div class="faq-a">Swipe in the direction you want the snake to move.</div></div>
+      <div class="faq-item"><div class="faq-q">Does the snake speed up?</div><div class="faq-a">Yes, the snake gets faster as you eat more food, increasing the challenge.</div></div>
+      <div class="faq-item"><div class="faq-q">What's a good score?</div><div class="faq-a">Getting above 100 points shows solid skill. Expert players can reach 200+.</div></div>
+    </div>
+    <section class="related-section"><h3>🎮 Related Games</h3><div class="games-grid" id="relatedGames"></div></section>
+  </main>
+  <footer class="site-footer"><div class="footer-inner"><p>© 2026 FunGames</p><div class="footer-links"><a href="../../index.html">Home</a><a href="../../games.html">All Games</a></div></div></footer>
+  <script src="../../js/games-registry.js"></script><script src="../../js/score-manager.js"></script><script src="../../js/daily-challenge.js"></script><script src="../../js/app.js"></script>
+  <script src="game.js"></script>
+  <script>renderGamesGrid(GAMES.filter(g=>g.id!=="snake"&&g.skills.some(s=>["reflex","focus"].includes(s))).slice(0,4),"relatedGames","../../");</script>
+</body>
+</html>

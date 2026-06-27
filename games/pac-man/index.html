@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pac-Man — Free Online Arcade Game | FunGames</title>
+  <meta name="description" content="Play Pac-Man free online. Navigate the maze, eat dots, avoid ghosts. Classic arcade game — no download required.">
+  <link rel="canonical" href="https://abhay2703.github.io/fun-games/games/pac-man/">
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+  <header class="site-header"><div class="header-inner">
+    <a href="../../index.html" class="logo"><span class="logo-icon">🎮</span> Fun<span>Games</span></a>
+    <div class="header-search"><span class="search-icon">🔍</span><input type="search" id="searchInput" placeholder="Search games..." autocomplete="off" aria-label="Search games"><div id="searchDropdown" class="search-results-dropdown"></div></div>
+    <nav class="header-nav"><a href="../../index.html">Home</a><a href="../../games.html">All Games</a></nav>
+    <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+  </div></header>
+  <main class="main">
+    <div class="game-page-header"><a href="../../games.html" class="back-btn">← Back</a><h1 class="game-page-title">👾 Pac-Man</h1></div>
+    <div class="game-container">
+      <div class="game-toolbar">
+        <div class="game-controls">
+          <button class="toolbar-btn" onclick="restartGame()">🔄 Restart</button>
+          <button class="toolbar-btn" onclick="togglePause()">⏸ Pause</button>
+          <button class="toolbar-btn" onclick="toggleFullscreen()">⛶ Fullscreen</button>
+        </div>
+        <div class="game-score">
+          <span>Score: <strong id="scoreDisplay">0</strong></span>
+          <span>Best: <strong id="bestDisplay">0</strong></span>
+          <span>Lives: <strong id="livesDisplay">3</strong></span>
+        </div>
+      </div>
+      <div class="game-area"><div id="gameRoot"></div></div>
+    </div>
+    <div class="game-info">
+      <div class="info-card"><h3>📖 How to Play</h3><p>Use arrow keys or WASD to navigate. Eat all dots to complete the level. Avoid ghosts — eat power pellets to chase them!</p><ul><li>Arrow keys or WASD to move</li><li>Eat all dots to win</li><li>Large dots = power pellets</li><li>3 lives per game</li></ul></div>
+      <div class="info-card"><h3>🎯 Skills & Benefits</h3><p>Pac-Man improves reaction time, strategic planning, and spatial navigation.</p><ul><li><strong>Reflex:</strong> Dodge ghosts quickly</li><li><strong>Strategy:</strong> Plan safe routes</li><li><strong>Spatial:</strong> Navigate the maze</li></ul><p style="margin-top:8px"><strong>Recommended for:</strong> All ages (6+)</p></div>
+    </div>
+    <section class="related-section"><h3>🎮 Related Games</h3><div class="games-grid" id="relatedGames"></div></section>
+  </main>
+  <footer class="site-footer"><div class="footer-inner"><p>© 2026 FunGames</p><div class="footer-links"><a href="../../index.html">Home</a><a href="../../games.html">All Games</a></div></div></footer>
+  <script src="../../js/games-registry.js"></script><script src="../../js/score-manager.js"></script><script src="../../js/daily-challenge.js"></script><script src="../../js/app.js"></script>
+  <script src="game.js"></script>
+  <script>renderGamesGrid(GAMES.filter(g=>g.id!=="pac-man"&&g.category==="Arcade").slice(0,4),"relatedGames","../../");</script>
+</body>
+</html>

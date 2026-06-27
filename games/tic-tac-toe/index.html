@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tic Tac Toe — Free Online Game | FunGames</title>
+  <meta name="description" content="Play Tic Tac Toe free online. Classic X and O strategy game against AI. No download required. Train strategic thinking and pattern recognition.">
+  <link rel="canonical" href="https://abhay2703.github.io/fun-games/games/tic-tac-toe/">
+  <link rel="stylesheet" href="../../css/style.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoGame","name":"Tic Tac Toe","description":"Classic two-player strategy game on a 3x3 grid","genre":"Strategy","playMode":"SinglePlayer","applicationCategory":"Game"}</script>
+</head>
+<body>
+  <header class="site-header"><div class="header-inner">
+    <a href="../../index.html" class="logo"><span class="logo-icon">🎮</span> Fun<span>Games</span></a>
+    <div class="header-search"><span class="search-icon">🔍</span><input type="search" id="searchInput" placeholder="Search games..." autocomplete="off" aria-label="Search games"><div id="searchDropdown" class="search-results-dropdown"></div></div>
+    <nav class="header-nav"><a href="../../index.html">Home</a><a href="../../games.html">All Games</a></nav>
+    <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+  </div></header>
+
+  <main class="main">
+    <div class="game-page-header">
+      <a href="../../games.html" class="back-btn">← Back</a>
+      <h1 class="game-page-title">⭕ Tic Tac Toe</h1>
+    </div>
+
+    <div class="game-container">
+      <div class="game-toolbar">
+        <div class="game-controls">
+          <button class="toolbar-btn" onclick="restartGame()">🔄 Restart</button>
+          <button class="toolbar-btn" onclick="toggleFullscreen()">⛶ Fullscreen</button>
+        </div>
+        <div class="game-score">
+          <span>Score: <strong id="scoreDisplay">0</strong></span>
+          <span>Best: <strong id="bestDisplay">0</strong></span>
+          <span>Wins: <strong id="winsDisplay">0</strong></span>
+        </div>
+      </div>
+      <div class="game-area"><div id="gameRoot"></div></div>
+    </div>
+
+    <div class="game-info">
+      <div class="info-card">
+        <h3>📖 How to Play</h3>
+        <p>Click on any empty cell to place your mark (X). You play against the computer (O). Get three marks in a row — horizontally, vertically, or diagonally — to win!</p>
+        <ul><li>You play as X, computer plays as O</li><li>Take turns placing marks</li><li>First to get 3 in a row wins</li><li>If all cells fill up with no winner, it's a draw</li></ul>
+      </div>
+      <div class="info-card">
+        <h3>🎯 Skills & Benefits</h3>
+        <p>Tic Tac Toe develops strategic thinking, pattern recognition, and the ability to anticipate your opponent's moves.</p>
+        <ul><li><strong>Strategic Thinking:</strong> Plan moves ahead</li><li><strong>Pattern Recognition:</strong> Spot winning combinations</li><li><strong>Decision Making:</strong> Choose optimal moves under constraints</li></ul>
+        <p style="margin-top:8px"><strong>Recommended for:</strong> All ages (5+)</p>
+      </div>
+    </div>
+
+    <div class="faq-section">
+      <h3>❓ Frequently Asked Questions</h3>
+      <div class="faq-item"><div class="faq-q">Can I play against another person?</div><div class="faq-a">Currently the game is player vs computer. The AI provides a moderate challenge.</div></div>
+      <div class="faq-item"><div class="faq-q">Is there a strategy to always win?</div><div class="faq-a">The first player can guarantee at least a draw with perfect play by starting in the center or a corner.</div></div>
+      <div class="faq-item"><div class="faq-q">What happens when the board is full?</div><div class="faq-a">If neither player gets three in a row, the game ends in a draw.</div></div>
+    </div>
+
+    <section class="related-section">
+      <h3>🎮 Related Games</h3>
+      <div class="games-grid" id="relatedGames"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="footer-inner"><p>© 2026 FunGames</p><div class="footer-links"><a href="../../index.html">Home</a><a href="../../games.html">All Games</a></div></div></footer>
+  <script src="../../js/games-registry.js"></script>
+  <script src="../../js/score-manager.js"></script>
+  <script src="../../js/daily-challenge.js"></script>
+  <script src="../../js/app.js"></script>
+  <script src="game.js"></script>
+  <script>
+    renderGamesGrid(GAMES.filter(g=>g.id!=="tic-tac-toe"&&g.skills.some(s=>["strategy","logic"].includes(s))).slice(0,4),"relatedGames","../../");
+  </script>
+</body>
+</html>

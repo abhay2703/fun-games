@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sliding Puzzle — Free 15 Puzzle Game | FunGames</title>
+  <meta name="description" content="Play the classic 15 Sliding Puzzle free online. Slide tiles to arrange them in order. Train spatial reasoning and problem-solving.">
+  <link rel="canonical" href="https://abhay2703.github.io/fun-games/games/sliding-puzzle/">
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+  <header class="site-header"><div class="header-inner">
+    <a href="../../index.html" class="logo"><span class="logo-icon">🎮</span> Fun<span>Games</span></a>
+    <div class="header-search"><span class="search-icon">🔍</span><input type="search" id="searchInput" placeholder="Search games..." autocomplete="off" aria-label="Search games"><div id="searchDropdown" class="search-results-dropdown"></div></div>
+    <nav class="header-nav"><a href="../../index.html">Home</a><a href="../../games.html">All Games</a></nav>
+    <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+  </div></header>
+  <main class="main">
+    <div class="game-page-header"><a href="../../games.html" class="back-btn">← Back</a><h1 class="game-page-title">🧩 Sliding Puzzle</h1></div>
+    <div class="game-container">
+      <div class="game-toolbar">
+        <div class="game-controls">
+          <button class="toolbar-btn" onclick="restartGame()">🔄 Shuffle</button>
+          <button class="toolbar-btn" onclick="toggleFullscreen()">⛶ Fullscreen</button>
+        </div>
+        <div class="game-score">
+          <span>Moves: <strong id="scoreDisplay">0</strong></span>
+          <span>Best: <strong id="bestDisplay">—</strong></span>
+        </div>
+      </div>
+      <div class="game-area"><div id="gameRoot"></div></div>
+    </div>
+    <div class="game-info">
+      <div class="info-card"><h3>📖 How to Play</h3><p>Click a tile adjacent to the empty space to slide it. Arrange all numbers in order from 1 to 15.</p><ul><li>Click a tile next to the empty space</li><li>Or use arrow keys to slide</li><li>Arrange 1-15 in order, left to right, top to bottom</li><li>Fewer moves = better score</li></ul></div>
+      <div class="info-card"><h3>🎯 Skills & Benefits</h3><p>Sliding Puzzle improves spatial reasoning, sequential thinking, and planning.</p><ul><li><strong>Spatial:</strong> Visualize tile movements</li><li><strong>Logic:</strong> Plan move sequences</li><li><strong>Strategy:</strong> Solve row by row</li></ul><p style="margin-top:8px"><strong>Recommended for:</strong> Ages 6+</p></div>
+    </div>
+    <div class="faq-section"><h3>❓ FAQ</h3>
+      <div class="faq-item"><div class="faq-q">Is every puzzle solvable?</div><div class="faq-a">Yes, the game only generates solvable configurations.</div></div>
+      <div class="faq-item"><div class="faq-q">What's a good move count?</div><div class="faq-a">Solving the 15-puzzle in under 80 moves is excellent.</div></div>
+    </div>
+    <section class="related-section"><h3>🎮 Related Games</h3><div class="games-grid" id="relatedGames"></div></section>
+  </main>
+  <footer class="site-footer"><div class="footer-inner"><p>© 2026 FunGames</p><div class="footer-links"><a href="../../index.html">Home</a><a href="../../games.html">All Games</a></div></div></footer>
+  <script src="../../js/games-registry.js"></script><script src="../../js/score-manager.js"></script><script src="../../js/daily-challenge.js"></script><script src="../../js/app.js"></script>
+  <script src="game.js"></script>
+  <script>renderGamesGrid(GAMES.filter(g=>g.id!=="sliding-puzzle"&&g.skills.includes("spatial")).slice(0,4),"relatedGames","../../");</script>
+</body>
+</html>

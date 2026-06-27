@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paint & Draw — Free Online Drawing Tool | FunGames</title>
+  <meta name="description" content="Free online drawing tool. Choose colors, brush sizes, and create digital artwork directly in your browser. No download needed.">
+  <link rel="canonical" href="https://abhay2703.github.io/fun-games/games/paint/">
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+  <header class="site-header"><div class="header-inner">
+    <a href="../../index.html" class="logo"><span class="logo-icon">🎮</span> Fun<span>Games</span></a>
+    <div class="header-search"><span class="search-icon">🔍</span><input type="search" id="searchInput" placeholder="Search games..." autocomplete="off" aria-label="Search games"><div id="searchDropdown" class="search-results-dropdown"></div></div>
+    <nav class="header-nav"><a href="../../index.html">Home</a><a href="../../games.html">All Games</a></nav>
+    <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+  </div></header>
+  <main class="main">
+    <div class="game-page-header"><a href="../../games.html" class="back-btn">← Back</a><h1 class="game-page-title">🎨 Paint & Draw</h1></div>
+    <div class="game-container">
+      <div class="game-toolbar">
+        <div class="game-controls">
+          <button class="toolbar-btn" onclick="clearCanvas()">🗑 Clear</button>
+          <button class="toolbar-btn" onclick="undoStroke()">↩ Undo</button>
+          <button class="toolbar-btn" onclick="saveDrawing()">💾 Save</button>
+          <button class="toolbar-btn" onclick="toggleFullscreen()">⛶ Fullscreen</button>
+        </div>
+      </div>
+      <div class="game-area"><div id="gameRoot"></div></div>
+    </div>
+    <div class="game-info">
+      <div class="info-card"><h3>📖 How to Use</h3><p>Click and drag to draw. Use the color picker and brush size controls below the canvas.</p><ul><li>Click & drag to draw</li><li>Pick colors and brush sizes</li><li>Toggle eraser mode</li><li>Undo last stroke or clear all</li><li>Save your artwork as PNG</li></ul></div>
+      <div class="info-card"><h3>🎯 Skills & Benefits</h3><p>Paint & Draw encourages creative expression, fine motor skills, and relaxation.</p><ul><li><strong>Creativity:</strong> Free-form expression</li><li><strong>Motor Skills:</strong> Precise mouse/touch control</li><li><strong>Relaxation:</strong> Stress-free creative outlet</li></ul><p style="margin-top:8px"><strong>Recommended for:</strong> All ages (3+)</p></div>
+    </div>
+    <section class="related-section"><h3>🎮 Related Games</h3><div class="games-grid" id="relatedGames"></div></section>
+  </main>
+  <footer class="site-footer"><div class="footer-inner"><p>© 2026 FunGames</p><div class="footer-links"><a href="../../index.html">Home</a><a href="../../games.html">All Games</a></div></div></footer>
+  <script src="../../js/games-registry.js"></script><script src="../../js/score-manager.js"></script><script src="../../js/daily-challenge.js"></script><script src="../../js/app.js"></script>
+  <script src="game.js"></script>
+  <script>renderGamesGrid(GAMES.filter(g=>g.id!=="paint"&&g.skills.includes("creativity")).concat(GAMES.filter(g=>g.difficulty==="easy"&&g.id!=="paint")).slice(0,4),"relatedGames","../../");</script>
+</body>
+</html>

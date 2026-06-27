@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Games — FunGames | Browse Free Browser Games</title>
+  <meta name="description" content="Browse all free browser games. Filter by category, difficulty, skill type. Puzzle, arcade, memory, strategy, reflex games and more.">
+  <link rel="canonical" href="https://abhay2703.github.io/fun-games/games.html">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo"><span class="logo-icon">🎮</span> Fun<span>Games</span></a>
+      <div class="header-search">
+        <span class="search-icon">🔍</span>
+        <input type="search" id="searchInput" placeholder="Search games..." autocomplete="off" aria-label="Search games">
+        <div id="searchDropdown" class="search-results-dropdown"></div>
+      </div>
+      <nav class="header-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="games.html" class="active">All Games</a>
+        <a href="games.html?category=puzzle">Puzzles</a>
+        <a href="games.html?category=arcade">Arcade</a>
+      </nav>
+      <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <main class="main">
+    <h1 class="section-title" style="margin-bottom:24px;font-size:1.6rem">🎮 All Games</h1>
+
+    <div class="filter-bar">
+      <select id="filterCategory" aria-label="Filter by category">
+        <option value="all">All Categories</option>
+      </select>
+      <select id="filterDifficulty" aria-label="Filter by difficulty">
+        <option value="">All Difficulties</option>
+        <option value="easy">Easy</option>
+        <option value="medium">Medium</option>
+        <option value="hard">Hard</option>
+      </select>
+      <div class="filter-chips">
+        <button class="skill-chip filter-chip" data-skill="memory">🧠 Memory</button>
+        <button class="skill-chip filter-chip" data-skill="logic">🔍 Logic</button>
+        <button class="skill-chip filter-chip" data-skill="focus">🎯 Focus</button>
+        <button class="skill-chip filter-chip" data-skill="reflex">⚡ Reflex</button>
+        <button class="skill-chip filter-chip" data-skill="strategy">♟️ Strategy</button>
+        <button class="skill-chip filter-chip" data-skill="creativity">🎨 Creativity</button>
+        <button class="skill-chip filter-chip" data-skill="math">🔢 Math</button>
+        <button class="skill-chip filter-chip" data-skill="spatial">🧩 Spatial</button>
+      </div>
+    </div>
+
+    <div id="resultsCount" class="results-count"></div>
+    <div class="games-grid" id="allGamesGrid"></div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p>© 2026 FunGames — Free browser games. Play instantly, no downloads.</p>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="games.html">All Games</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/games-registry.js"></script>
+  <script src="js/score-manager.js"></script>
+  <script src="js/daily-challenge.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    (function() {
+      const params = new URLSearchParams(window.location.search);
+      const catParam = params.get("category") || "all";
+
+      const catSelect = document.getElementById("filterCategory");
+      CATEGORIES.forEach(c => {
+        const opt = document.createElement("option");
+        opt.value = c.id;
+        opt.textContent = `${c.icon} ${c.name} (${c.count})`;
+        if (c.id === catParam) opt.selected = true;
+        catSelect.appendChild(opt);
+      });
+      catSelect.querySelector('option[value="all"]').remove();
+
+      renderGamesGrid(catParam === "all" ? GAMES : getGamesByCategory(catParam), "allGamesGrid");
+      const count = catParam === "all" ? GAMES.length : getGamesByCategory(catParam).length;
+      document.getElementById("resultsCount").textContent = `${count} game${count !== 1 ? "s" : ""} found`;
+
+      if (catParam !== "all") {
+        const cat = CATEGORIES.find(c => c.id === catParam);
+        if (cat) document.querySelector("h1").textContent = `${cat.icon} ${cat.name} Games`;
+      }
+
+      initFilters();
+    })();
+  </script>
+</body>
+</html>
